@@ -1,0 +1,66 @@
+{
+  "version": 1,
+  "author": "Angel Velasquez",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": -28.2, "left": -135, "attrs": {} },
+    {
+      "type": "wokwi-lcd1602",
+      "id": "display-actuator",
+      "top": 236.8,
+      "left": 370.4,
+      "attrs": { "pins": "i2c" }
+    },
+    {
+      "type": "wokwi-hc-sr04",
+      "id": "fl-distance-sensor",
+      "top": -190.5,
+      "left": 187.9,
+      "attrs": { "distance": "250" }
+    },
+    {
+      "type": "wokwi-hc-sr04",
+      "id": "fr-distance-sensor",
+      "top": -190.5,
+      "left": 389.5,
+      "attrs": { "distance": "250" }
+    },
+    {
+      "type": "wokwi-hc-sr04",
+      "id": "rl-distance-sensor",
+      "top": -190.5,
+      "left": 610.3,
+      "attrs": { "distance": "250" }
+    },
+    {
+      "type": "wokwi-hc-sr04",
+      "id": "rr-distance-sensor",
+      "top": -180.9,
+      "left": 831.1,
+      "attrs": { "distance": "250" }
+    }
+  ],
+  "connections": [
+    [ "fl-distance-sensor:GND", "uno:GND.2", "black", [ "v182.4", "h-235.5" ] ],
+    [ "fr-distance-sensor:GND", "uno:GND.2", "black", [ "v182.4", "h-437.1" ] ],
+    [ "rl-distance-sensor:GND", "uno:GND.2", "black", [ "v182.4", "h-667.5" ] ],
+    [ "rr-distance-sensor:GND", "uno:GND.2", "black", [ "v182.4", "h-897.9" ] ],
+    [ "fl-distance-sensor:VCC", "uno:5V", "red", [ "v0" ] ],
+    [ "fr-distance-sensor:VCC", "uno:5V", "red", [ "v0" ] ],
+    [ "rl-distance-sensor:VCC", "uno:5V", "red", [ "v0" ] ],
+    [ "rr-distance-sensor:VCC", "uno:5V", "red", [ "v0" ] ],
+    [ "fl-distance-sensor:TRIG", "uno:10", "purple", [] ],
+    [ "fr-distance-sensor:TRIG", "uno:11", "purple", [ "v0" ] ],
+    [ "rl-distance-sensor:TRIG", "uno:12", "purple", [ "v0" ] ],
+    [ "rr-distance-sensor:TRIG", "uno:13", "purple", [ "v0" ] ],
+    [ "fl-distance-sensor:ECHO", "uno:4", "green", [ "v9.6", "h-196.7" ] ],
+    [ "fr-distance-sensor:ECHO", "uno:5", "green", [] ],
+    [ "rl-distance-sensor:ECHO", "uno:6", "green", [] ],
+    [ "rr-distance-sensor:ECHO", "uno:7", "green", [] ],
+    [ "display-actuator:GND", "uno:GND.3", "black", [] ],
+    [ "display-actuator:VCC", "uno:5V", "red", [ "h0" ] ],
+    [ "display-actuator:SDA", "uno:A4", "green", [ "h0" ] ],
+    [ "display-actuator:SCL", "uno:A5", "blue", [ "h0" ] ]
+  ],
+  "dependencies": {}
+}
